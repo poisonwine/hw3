@@ -23,8 +23,9 @@ image=ind2gray(f,map);
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena1.bmp" width="400"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena2.bmp" width="400"/>
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena4.bmp" width="400"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/woman.bmp" width="400"/>
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/woman1.bmp" width="400"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/woman2.bmp" width="400"/>
-#### 直方图均衡
+#### 二.直方图均衡
 &emsp;&emsp;直方图均衡化是一种利用灰度变换自动调节图像对比度质量的方法，基本思想是通过灰度级的概率密度函数求出灰度变换函数，它是一种以累计分布函数变换法为基础的直方图修正法。
+#### 2.1
 
 &emsp;&emsp;当输入直方图H(r)(此处指每个灰度级占有的像素数);灰度级范围[r0,rk]；目的是找到一个s=T(r)使得输出图像的直方图G(s)在整个灰度级范围内均匀分布。且需满足:
 * 0——L(灰度范围)单调递增，避免黑白颠倒
@@ -32,11 +33,19 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;累积分布函数需要满足以下要求
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F%E4%B8%80.png" width="150"/>;
-
 &emsp;&emsp;转化为离散形式为
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F2.png" width="250"/>;
 
 &emsp;&emsp;一般来说
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F3.png" width="180"/>;
 
+#### 2.2
 
+&emsp;&emsp;直方图均衡化处理的步骤如下：
+* 求出给定待处理图像的直方图;
+* 利用累计分布函数对原图像的统计直方图做变换，得到新的图像灰度;
+* 进行近似处理，将新灰度代替旧灰度，同时将灰度值相等或相近的每个灰度直方图合并在一起
+
+&emsp;&emsp;根据算法原理编写的函数见`源代码.txt`文件；MATLAB中自带函数`histeq`是专门用于直方图均衡的函数，调用格式为`f=histeq(image,n)`，n
+为输入的灰度级数，默认为256。
 
