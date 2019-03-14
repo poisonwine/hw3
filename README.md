@@ -57,4 +57,15 @@ image=ind2gray(f,map);
 #### 2.4 均衡化结果
 &emsp;&emsp;使用MATLAB自带函数对附件图像直方图进行均衡化前，仍需要先将索引图像转化为灰度图像，然后再使用`histeq`函数进行直方图均衡化。均衡化的图像结果如下列图所示：
 
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1citywall.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1citywall1.bmp" width="425"/> 
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1citywall2.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1elain.bmp" width="425"/> 
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1elain1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1elain2.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1elain3.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1lena.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1lena1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1lena2.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1lena4.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1woman.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1woman1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1woman2.bmp" width="425"/>
+
+&emsp;&emsp;通过对14幅图像的观察，不难发现，直方图均衡会使图像整体的对比度增强。使得原图像较暗的地方更亮，而原图像较亮的部分会适当降低亮度，使得更加能突显出细节部分。
+
+
 
