@@ -49,3 +49,7 @@ image=ind2gray(f,map);
 &emsp;&emsp;根据算法原理编写的函数见`源代码.txt`文件；MATLAB中自带函数`histeq`是专门用于直方图均衡的函数，调用格式为`f=histeq(image,n)`，n
 为输入的灰度级数，默认为64。
 
+#### 2.3 MATLAB自带函数与自编函数效果对比
+
+
+
