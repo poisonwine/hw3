@@ -26,7 +26,6 @@ image=ind2gray(f,map);
 #### 二.直方图均衡
 &emsp;&emsp;直方图均衡化是一种利用灰度变换自动调节图像对比度质量的方法，基本思想是通过灰度级的概率密度函数求出灰度变换函数，它是一种以累计分布函数变换法为基础的直方图修正法。
 #### 2.1
-
 &emsp;&emsp;当输入直方图H(r)(此处指每个灰度级占有的像素数);灰度级范围[r0,rk]；目的是找到一个s=T(r)使得输出图像的直方图G(s)在整个灰度级范围内均匀分布。且需满足:
 * 0——L(灰度范围)单调递增，避免黑白颠倒
 * 0<r<L,时0<s<L，保持动态范围一致
@@ -51,8 +50,11 @@ image=ind2gray(f,map);
 
 #### 2.3 MATLAB自带函数与自编函数效果对比
 
-<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E5%AF%B9%E6%AF%94.bmp" width="450"/><img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%AF%B9%E6%AF%94.bmp" width="450"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E5%AF%B9%E6%AF%94.bmp" width="435"/><img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%AF%B9%E6%AF%94.bmp" width="435"/>
 
-&emsp;&emsp;可以观察到，自编函数的效果与MATLAB自带函数运行效果相同，将两个处理后的图像做差，所得图像矩阵基本为全0，故验证了直方图均衡化
-算法的正确性。
+&emsp;&emsp;可以观察到，自编函数的效果与MATLAB自带函数运行效果相同，将两个处理后的图像做差，所得图像矩阵基本为全0，故验证了直方图均衡化算法的正确性。
+
+#### 2.4 均衡化结果
+&emsp;&emsp;使用MATLAB自带函数对附件图像直方图进行均衡化前，仍需要先将索引图像转化为灰度图像，然后再使用`histeq`函数进行直方图均衡化。均衡化的图像结果如下列图所示：
+
 
