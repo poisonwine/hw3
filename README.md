@@ -51,5 +51,8 @@ image=ind2gray(f,map);
 
 #### 2.3 MATLAB自带函数与自编函数效果对比
 
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E5%AF%B9%E6%AF%94.bmp" width="500"/>
 
+&emsp;&emsp;可以观察到，自编函数的效果与MATLAB自带函数运行效果相同，将两个处理后的图像做差，所得图像矩阵基本为全0，故验证了直方图均衡化
+算法的正确性。
 
