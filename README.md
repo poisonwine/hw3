@@ -30,9 +30,13 @@ image=ind2gray(f,map);
 * 0——L(灰度范围)单调递增，避免黑白颠倒
 * 0<r<L,时0<s<L，保持动态范围一致
 
-&emsp;&emsp;累积分布函数需要满足以下要求：
-
-<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F%E4%B8%80.png" width="200"/>;
+&emsp;&emsp;累积分布函数需要满足以下要求
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F%E4%B8%80.png" width="150"/>;
 
 &emsp;&emsp;转化为离散形式为
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E5%85%AC%E5%BC%8F2.png" width="250"/>;
+
+&emsp;&emsp;一般来说
+
+
 
