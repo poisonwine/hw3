@@ -1,7 +1,7 @@
 # 直方图图像增强实验报告
 #### 自动化66 杨德宇 2161500050
 #### 摘要
-&emsp;&emsp;本文利用MATLAB软件将附件所给的索引图像转化为灰度图像，接着使用imhist函数绘制出了附件所给14幅图像的灰度分布直方图，并用histeq函数对其进行了均衡化处理，与自编函数效果进行了对比，分析并对比了与原图像的差异；进一步把图像按照对源图像直方图的观察，各自自行指定不同源图像的直方图，进行直方图匹配增强并对比了效果；接着对elain和lena图像采用局部直方图均衡和局部直方图统计的方法进行了7*7的局部直方图增强；最后利用直方图对其进行了分割。
+&emsp;&emsp;本文利用MATLAB软件将附件所给的索引图像转化为灰度图像，接着使用imhist函数绘制出了附件所给14幅图像的灰度分布直方图，并用histeq函数对其进行了均衡化处理，与自编函数效果进行了对比，分析并对比了与原图像的差异；进一步把图像按照对源图像直方图的观察，各自自行指定不同源图像的直方图，进行直方图匹配增强并对比了效果；接着对elain和lena图像采用局部直方图均衡和局部直方图统计的方法进行了7*7的局部直方图增强；最后实现了灰度平均值法和迭代最佳阈值法对图像的分割，效果较为理想。
 #### 关键词  MATLAB 灰度直方图 直方图增强 图像分割
 #### 一.直方图绘制
 &emsp;&emsp;灰度直方图是关于灰度级分布的函数，是对图像中灰度级分布的统计。横坐标为灰度级，纵坐标为该灰度级像素点的个数。
@@ -43,7 +43,7 @@ image=ind2gray(f,map);
 * 利用累计分布函数对原图像的统计直方图做变换，得到新的图像灰度;
 * 进行近似处理，将新灰度代替旧灰度，同时将灰度值相等或相近的每个灰度直方图合并在一起
 
-&emsp;&emsp;根据算法原理编写的函数见`源代码.txt`文件；MATLAB中自带函数`histeq`是专门用于直方图均衡的函数，调用格式为`f=histeq(image,n)`，n
+&emsp;&emsp;根据算法原理编写的函数见`源代码.md`文件；MATLAB中自带函数`histeq`是专门用于直方图均衡的函数，调用格式为`f=histeq(image,n)`，n
 为输入的灰度级数，默认为64。
 
 #### 2.3 MATLAB自带函数与自编函数效果对比
@@ -87,7 +87,7 @@ image=ind2gray(f,map);
 * 将模板在扩展后的图像上进行滑动，做直方图均衡，并将均衡后的中心像素赋值给原像素点。每次滑动像素距离为1个单位；
 * 滑动均衡完毕，将新图像裁剪到和原图像一样大小。
 
-&emsp;&emsp;函数代码见`源代码.txt`文本中的`localhistogram.m`。算法实现效果如下图所示：
+&emsp;&emsp;函数代码见`源代码.md`文本中的`localhistogram.m`。算法实现效果如下图所示：
 
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="430"/> <img src="https://github.com/poisonwine/hw3/blob/3ee6b891963b99c4f6ed169c0d7736241013bce3/%E5%9B%BE%E7%89%87/lena%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="430"/>
 
@@ -99,7 +99,7 @@ image=ind2gray(f,map);
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%9F%E8%AE%A12.png"/>
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%9F%E8%AE%A13.png"/>
 
-&emsp;&emsp;本实验中选择`E=4，k0=k2=0.4,k1=0.02`,编写的函数见`源代码.txt`文本中的`statisenhance.m`。实验效果如下图：
+&emsp;&emsp;本实验中选择`E=4，k0=k2=0.4,k1=0.02`,编写的函数见`源代码.md`文本中的`statisenhance.m`。实验效果如下图：
 
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430" height="300"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430" height="300"/>
 
@@ -130,7 +130,7 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;如果Tk=Tk+1,则取Tk为所求得的阈值，否则，转(2)继续迭代。
 
-&emsp;&emsp;迭代最佳阈值方法程序见`源代码.txt`文本中的`threshold.m`。最后求得`elain.bmp`图像的灰度均值为136.70，`lena.bmp`灰度均值为115.17。
+&emsp;&emsp;迭代最佳阈值方法程序见`源代码.md`文本中的`threshold.m`。最后求得`elain.bmp`图像的灰度均值为136.70，`lena.bmp`灰度均值为115.17。
 实验效果如下图：
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E8%BF%AD%E4%BB%A3%E9%98%88%E5%80%BC.png"/> 
 
