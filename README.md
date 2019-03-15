@@ -83,9 +83,11 @@ image=ind2gray(f,map);
 #### 四.基于直方图的局部增强
 #### 4.1 基于局部直方图均衡的图像增强
 &emsp;&emsp;基于局部直方图均衡的图像增强算法步骤描述如下：
-* Step1：对灰度图像进行边缘扩展；
-* Step2：将模板在扩展后的图像上进行滑动，做直方图均衡，并将均衡后的中心像素赋值给原像素点。每次滑动像素距离为1个单位；
-* Step3：滑动均衡完毕，将新图像裁剪到和原图像一样大小。
+* 对灰度图像进行边缘扩展；
+* 将模板在扩展后的图像上进行滑动，做直方图均衡，并将均衡后的中心像素赋值给原像素点。每次滑动像素距离为1个单位；
+* 滑动均衡完毕，将新图像裁剪到和原图像一样大小。
 
 &emsp;&emsp;函数代码见`源代码.txt`文本中的`localhistogram.m`。算法实现效果如下图所示：
+
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="425"/>
 
