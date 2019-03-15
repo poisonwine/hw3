@@ -94,4 +94,13 @@ image=ind2gray(f,map);
 &emsp;&emsp;可以观察到，进行局部直方图均衡后，图像的效果很不理想，背景被模糊化了，只能勾勒出人物的轮廓，细节部分也有所模糊。
 
 #### 4.2 基于直方图统计的增强
+
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%9F%E8%AE%A11.png"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%9F%E8%AE%A12.png"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%9F%E8%AE%A13.png"/>
+
+&emsp;&emsp;本实验中选择`E=4，k0=k2=0.4,k1=0.02`,编写的函数见`源代码.txt`文本中的`statisenhance.m`。实验效果如下图：
+
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430"/>
+
+&emsp;&emsp;由于E的强度取得较大，在图像较暗区域会使得亮度增强较大，导致elain人物的头发和眼睛出现了亮斑，而lena人物的头发处也出现了相同的情况，人物的细节部分出现了不想看到的情况。说明这种方法依赖于参数的选择，而不同图像需要突出的部分不一样，导致参数选择实际上是一件比较困难的事。
