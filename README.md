@@ -72,10 +72,12 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;直方图规定化原理是对两个直方图都做均衡化，变成相同的归一化的均匀直方图。以此均匀直方图起到媒介作用，再对参考图像做均衡化的逆运算即可。直方图均衡化是直方图规定化的桥梁。
 
-&emsp;&emsp;MATLAB中提供函数`histeq`做直方图的均衡，若要进行直方图匹配，调用格式变为`J=histeq(I,hgram)`，其中，I为待匹配的图像，hgram为希望匹配的模板的直方图。处理后的结果如下图所示：
+&emsp;&emsp;MATLAB中提供函数`histeq`做直方图的均衡，若要进行直方图匹配，调用格式变为`J=histeq(I,hgram)`，其中，I为待匹配的图像，hgram为希望匹配的模板的直方图。分别以`citywall.bmp`,`elain.bmp`,`lena.bmp`,`woman.bmp`作为匹配模板，处理后的结果如下图所示：
 
 <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dcitywall1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dcitywall2.bmp" width="425"/>
-
-
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Delain1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Delain2.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Delain3.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dlena1.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dlena2.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dlena4.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dwoman1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dwoman2.bmp" width="425"/>
 
 
