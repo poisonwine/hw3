@@ -89,5 +89,8 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;函数代码见`源代码.txt`文本中的`localhistogram.m`。算法实现效果如下图所示：
 
-<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/3ee6b891963b99c4f6ed169c0d7736241013bce3/%E5%9B%BE%E7%89%87/lena%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="430"/> <img src="https://github.com/poisonwine/hw3/blob/3ee6b891963b99c4f6ed169c0d7736241013bce3/%E5%9B%BE%E7%89%87/lena%E5%B1%80%E9%83%A8%E5%A2%9E%E5%BC%BA.PNG" width="430"/>
 
+&emsp;&emsp;可以观察到，进行局部直方图均衡后，图像的效果很不理想，背景被模糊化了，只能勾勒出人物的轮廓，细节部分也有所模糊。
+
+#### 4.2 基于直方图统计的增强
