@@ -101,7 +101,7 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;本实验中选择`E=4，k0=k2=0.4,k1=0.02`,编写的函数见`源代码.txt`文本中的`statisenhance.m`。实验效果如下图：
 
-<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/elain%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430" height="300"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/lena%E7%BB%9F%E8%AE%A1%E5%A2%9E%E5%BC%BA.png" width="430" height="300"/>
 
 &emsp;&emsp;由于E的强度取得较大，在图像较暗区域会使得亮度增强较大，导致elain人物的头发和眼睛出现了亮斑，而lena人物的头发处也出现了相同的情况，人物的细节部分出现了不想看到的情况。说明这种方法依赖于参数的选择，而不同图像需要突出的部分不一样，导致参数选择实际上是一件比较困难的事。
 
@@ -111,4 +111,27 @@ image=ind2gray(f,map);
 &emsp;&emsp;本文实验了灰度平局值值法和迭代最佳阈值法。
 
 #### 5.1 灰度平均值法
-&emsp;&emsp;原理即是以整幅图像的灰度平均值作为阈值，大于阈值的像素取值为255，小于阈值的像素取值为0。实验效果如下图：
+&emsp;&emsp;原理即是以整幅图像的灰度平均值作为阈值，大于阈值的像素取值为255，小于阈值的像素取值为0。最后求得`elain.bmp`图像的灰度均值为135.38，`lena.bmp`灰度均值为99.05。实验效果如下图：
+
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%81%B0%E5%BA%A6%E5%B9%B3%E5%9D%87.png"/> 
+
+#### 5.2 迭代最佳阈值法
+&emsp;&emsp;该算法先假定一个阈值，然后计算在该阈值下的前景和背景的中心值，当前景和背景中心值得平均值和假定的阈值相同时，则迭代中止，并以此值为阈值进行二值化。
+
+&emsp;&emsp;算法步骤如下：
+* (1)求出图象的最大灰度值和最小灰度值，分别记为gl和gu，令初始阈值为：
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/1.png" height="50"/> 
+
+* (2)根据阈值T0将图象分割为前景和背景，分别求出两者的平均灰度值Ab和Af:
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/2.png" height="150"/> 
+
+* (3)令
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/3.png" height="50"/> 
+
+&emsp;&emsp;如果Tk=Tk+1,则取Tk为所求得的阈值，否则，转(2)继续迭代。
+
+&emsp;&emsp;迭代最佳阈值方法程序见`源代码.txt`文本中的`threshold.m`。最后求得`elain.bmp`图像的灰度均值为136.70，`lena.bmp`灰度均值为115.17。
+实验效果如下图：
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E8%BF%AD%E4%BB%A3%E9%98%88%E5%80%BC.png"/> 
+
+&emsp;&emsp;可以看出，两种分割方法对elain图像的效果相近，而lena图像存在一些差异，迭代最佳阈值法人物的细节更清晰。
