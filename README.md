@@ -74,7 +74,7 @@ image=ind2gray(f,map);
 
 &emsp;&emsp;MATLAB中提供函数`histeq`做直方图的均衡，若要进行直方图匹配，调用格式变为`J=histeq(I,hgram)`，其中，I为待匹配的图像，hgram为希望匹配的模板的直方图。处理后的结果如下图所示：
 
-<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1woman1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1woman2.bmp" width="425"/>
+<img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dcitywall1.bmp" width="425"/> <img src="https://github.com/poisonwine/hw3/blob/master/%E5%9B%BE%E7%89%87/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8Dcitywall2.bmp" width="425"/>
 
 
 
